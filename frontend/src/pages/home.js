@@ -10,7 +10,7 @@ const Home = ({user}) => {
     useEffect(() => {
         const getVideos = async () => {
             try {
-                const response = await axios.get('https://yt-api.sigve.dev/video');
+                const response = await axios.get('https://yt-api.sigve dev/video');
                 setVideos(response.data);
             } catch (error) {
                 console.log(error);
@@ -21,7 +21,7 @@ const Home = ({user}) => {
 
     return (
         <div className="home-page">
-            <Header />
+            <Header user={user} />
             <div className="home-content">
                 <div className="big-title">
                     <img src={logo} alt="The Gang" className="big-image" />
@@ -32,7 +32,7 @@ const Home = ({user}) => {
                         {videos ? videos.slice(0).reverse().map(video => {
                             return (
                                 <a href={"/video/" + video._id} className="video">
-                                    <img src={"https://yt-api.sigve.dev/uploads/" + video.thumbnail} alt="video" width="100%" height="80%" />
+                                    <img src={"https://yt-api.sigve dev/uploads/" + video.thumbnail} alt="video" width="100%" height="80%" />
                                     <h3 className="title">{video.title}</h3>
                                 </a>
                             )

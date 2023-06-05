@@ -9,7 +9,7 @@ const Register = () => {
             return;
         }
 
-        const response = await axios.post('https://yt-api.sigve.dev/user/register', {
+        const response = await axios.post('https://yt-api.sigve dev/user/register', {
             username: document.getElementById('username').value,
             email: document.getElementById('email').value,
             password: document.getElementById('pass').value,
@@ -19,7 +19,7 @@ const Register = () => {
             localStorage.setItem('user', JSON.stringify(response.data.accessToken));
             let now = new Date();
             localStorage.setItem('ttl', JSON.stringify(now.getTime() + (86400000 * 7)));
-            window.location.replace('https://yt.sigve.dev/');
+            window.location.replace('https://yt.sigve dev');
         } else {
             alert('There was an error registering your account.');
         }

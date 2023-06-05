@@ -12,11 +12,10 @@ import Upload from './pages/upload';
 
 function App() {
   const [user, setUser] = useState(null);
-  const url = window.location.href.split('/');
 
   useEffect(() => {
     const checkUser = async () => {
-      const response = await axios.get('https://yt-api.sigve.dev/auth', {
+      const response = await axios.get('https://yt-api.sigve dev/auth', {
         headers: {
           Authorization: JSON.parse(localStorage.getItem('user'))
         }
@@ -33,7 +32,7 @@ function App() {
         checkUser();
       }
     }
-  }, [url]);
+  }, []);
 
   return (
     <BrowserRouter>
@@ -42,9 +41,9 @@ function App() {
           <Route path="/" element={user ? <Home user={user} /> : <Navigate to="/login" />} />
           <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route path="/register" element={user ? <Navigate to="/" /> : <Register />} />
-          <Route path="/profile" element={<Profile user={user} />} />
+          <Route path="/profile/:id" element={<Profile user={user} />} />
           <Route path="/upload" element={<Upload user={user} />} />
-          <Route path="/video/:id" element={<Video />} />
+          <Route path="/video/:id" element={<Video user={user} />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGO_URL, {
 //setter opp for bruk av cors og hvilet domene som kan bruke serveren
 app.use(
     cors({
-        origin: "https://yt.sigve.dev",
+        origin: "https://yt.sigve dev",
         methods: "GET,POST,PUT,DELETE",
         credentials: true
     })
