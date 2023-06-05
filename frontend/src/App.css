@@ -185,10 +185,12 @@ input[type="submit"] {
   display: block;
   height: fit-content;
   margin: 0 10px;
+  text-decoration: none;
 }
 .home-page .home-content .video-container .video img {
   width: 100%;
   aspect-ratio: 16/9;
+  border-radius: 10px;
 }
 
 /*Profile Page*/
