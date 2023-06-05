@@ -179,18 +179,12 @@ input[type="submit"] {
   width: 100%;
   height: fit-content;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(6, 16.6%);
 }
 .home-page .home-content .video-container .video {
   display: block;
   height: fit-content;
   margin: 0 10px;
-}
-.home-page .home-content .video-container .video:first-child {
-  margin-left: 0;
-}
-.home-page .home-content .video-container .video:last-child {
-  margin-right: 0;
 }
 .home-page .home-content .video-container .video img {
   width: 100%;
