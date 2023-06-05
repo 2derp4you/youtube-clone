@@ -280,7 +280,12 @@ input[type="submit"] {
   justify-content: flex-start;
   padding: 0 40px;
 }
-.video-page .video video {
+.video-page .video-content .video-container .video {
   width: 100%;
   height: fit-content;
+}
+.video-page .video-content .video-container .video video {
+  width: calc(100vw - 80px);
+  height: fit-content;
+  margin-bottom: 20px;
 }
