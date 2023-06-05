@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { HeadProvider, Title } from 'react-head';
 
 import Header from "../components/header";
 
@@ -45,7 +46,7 @@ const Upload = ({user}) => {
 
         try {
             await axios.post("https://yt-api.sigve.dev/video/upload", newVideo);
-            window.location.replace("https://yt.sigve dev/profile");
+            window.location.replace("https://yt.sigve.dev/profile");
         }
         catch (err) {
             console.log(err);
@@ -61,7 +62,9 @@ const Upload = ({user}) => {
     }, [user]);
 
     return (
+        <HeadProvider>
         <div className="upload-page">
+            <Title>Upload</Title>
             <Header user={user} />
             <div className="upload-content">
                 <div className="upload-container">
@@ -77,6 +80,7 @@ const Upload = ({user}) => {
                 </div>
             </div>
         </div>
+        </HeadProvider>
     )
 }
 

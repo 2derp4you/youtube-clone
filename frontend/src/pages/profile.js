@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { HeadProvider, Title } from "react-head";
 
 import Header from "../components/header";
 
@@ -27,7 +28,9 @@ const Profile = ({user}) => {
     }, [user]);
 
     return (
+        <HeadProvider>
         <div className="profile-page">
+            <Title>{user ? user.username : "Loading..."}</Title>
             <Header user={user} />
             <div className="profile-content">
                 <div className="profile-container">
@@ -40,7 +43,7 @@ const Profile = ({user}) => {
                             <button onClick={() => {
                                 localStorage.removeItem('user');
                                 localStorage.removeItem('ttl');
-                                window.location.replace('https://yt.sigve dev/');
+                                window.location.replace('https://yt.sigve.dev/');
                             }} className="btn2">Logg ut</button>
                             <hr />
                             <a href="/upload" className="btn">Upload New</a>
@@ -60,6 +63,7 @@ const Profile = ({user}) => {
                 </div>
             </div>
         </div>
+        </HeadProvider>
     )
 }
 

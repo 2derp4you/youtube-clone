@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../components/header";
+import { HeadProvider, Title } from 'react-head';
 
 import logo from "../content/theGang-transparent.png";
 
@@ -20,7 +21,9 @@ const Home = ({user}) => {
     }, []);
 
     return (
+        <HeadProvider>
         <div className="home-page">
+            <Title>Youtube HC</Title>
             <Header user={user} />
             <div className="home-content">
                 <div className="big-title">
@@ -41,6 +44,7 @@ const Home = ({user}) => {
                 </div>
             </div>
         </div>
+        </HeadProvider>
     )
 }
 

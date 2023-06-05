@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { HeadProvider, Title } from 'react-head';
 
 const Register = () => {
 
@@ -19,14 +20,16 @@ const Register = () => {
             localStorage.setItem('user', JSON.stringify(response.data.accessToken));
             let now = new Date();
             localStorage.setItem('ttl', JSON.stringify(now.getTime() + (86400000 * 7)));
-            window.location.replace('https://yt.sigve dev');
+            window.location.replace('https://yt.sigve.dev');
         } else {
             alert('There was an error registering your account.');
         }
     };
 
     return (
+        <HeadProvider>
         <div className="register-page">
+            <Title>Register</Title>
             <form className="register-form" onSubmit={register}>
                 <h1>Register</h1>
                 <input type="text" id="username" placeholder="username" />
@@ -37,6 +40,7 @@ const Register = () => {
                 <input type="submit" value="Register" />
             </form>
         </div>
+        </HeadProvider>
     );
 }
 

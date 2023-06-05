@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { HeadProvider, Title } from 'react-head';
 
 const Login = () => {
 
@@ -12,7 +13,7 @@ const Login = () => {
                 localStorage.setItem('user', JSON.stringify(response.data.accessToken));
                 let now = new Date();
                 localStorage.setItem('ttl', JSON.stringify(now.getTime() + (86400000 * 7)));
-                window.location.replace('https://yt.sigve dev');
+                window.location.replace('https://yt.sigve.dev');
             }
         } catch (err) {
             console.log(err);
@@ -21,7 +22,9 @@ const Login = () => {
     };
 
     return (
+        <HeadProvider>
         <div className="login-page">
+            <Title>Login</Title>
             <form className="login-form" onSubmit={login}>
                 <h1>Login</h1>
                 <input type="email" id="email" placeholder="email" />
@@ -30,6 +33,7 @@ const Login = () => {
                 <input type="submit" value="Log In" />
             </form>
         </div>
+        </HeadProvider>
     );
 }
 
