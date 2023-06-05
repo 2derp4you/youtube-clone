@@ -302,9 +302,9 @@ input[type="submit"] {
 }
 .video-page .video-content .video-container .video {
   width: 50%;
-  height: 100%;
-  max-height: 70vh;
+  height: fit-content;
   margin-right: 30px;
+  aspect-ratio: 16/9;
 }
 .video-page .video-content .video-container .video video {
   width: fit-content;
