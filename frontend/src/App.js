@@ -12,6 +12,7 @@ import Upload from './pages/upload';
 
 function App() {
   const [user, setUser] = useState(null);
+  const url = window.location.href.split('/');
 
   useEffect(() => {
     const checkUser = async () => {
@@ -32,7 +33,7 @@ function App() {
         checkUser();
       }
     }
-  }, []);
+  }, [url]);
 
   return (
     <BrowserRouter>
