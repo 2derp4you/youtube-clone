@@ -71,6 +71,7 @@ const Upload = ({user}) => {
                         <input type="text" id="description" placeholder="description" />
                         <input type="file" id="image" onChange={handleImgFileChange} accept="image/png, image/jpg, image/jpeg" />
                         <input type="file" id="video" onChange={handleFileChange} accept="video/mp4" maxsize="800000000" />
+                        <p>100mb upload limit!</p>
                         <input type="submit" className="btn" value="Upload" />
                     </form>
                 </div>
