@@ -310,6 +310,9 @@ input[type="submit"] {
   height: fit-content;
   margin-bottom: 20px;
 }
+.video-page .video-content .video-container .video-info {
+  width: calc(50% - 30px);
+}
 .video-page .video-content .video-container .video-info a {
   display: inline;
 }
