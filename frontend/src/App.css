@@ -261,3 +261,9 @@ input[type="submit"] {
   object-fit: cover;
   aspect-ratio: 16/9;
 }
+
+/*Video Page*/
+.video-page .video video {
+  width: 100%;
+  height: fit-content;
+}
