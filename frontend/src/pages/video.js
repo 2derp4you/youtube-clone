@@ -22,18 +22,17 @@ const Video = ({ user }) => {
         <HeadProvider>
             <div className="video-page">
                 <Title>{video ? video.title : "Loading..."}</Title>
-                <Meta name="og:site_name" content="Youtube HC" />
-                <Meta name="og:url" content={url} />
-                <Meta name="og:type" content="video.other" />
-                <Meta name="og:title" content={video ? video.title : ""} />
-                <Meta name="og:image" content={video ? "https://yt-api.sigve.dev/uploads/" + video.thumbnail : ""} />
-                <Meta name="og:video" content={video ? "https://yt-api.sigve.dev/uploads/" + video.url : ""} />
-                <Meta name="og:video:type" content="video/mp4" />
-                <Meta name="og:video:secure_url" content={video ? "https://yt-api.sigve.dev/uploads/" + video.url : ""} />
-                <Meta name="og:video:height" content="720" />
-                <Meta name="og:video:width" content="1280" />
-                <Meta name="og:image:height" content="720" />
-                <Meta name="og:image:width" content="1280" />
+                <Meta name="url" content={url} />
+                <Meta name="type" content="video.other" />
+                <Meta name="title" content={video ? video.title : ""} />
+                <Meta name="image" content={video ? "https://yt-api.sigve.dev/uploads/" + video.thumbnail : ""} />
+                <Meta name="video" content={video ? "https://yt-api.sigve.dev/uploads/" + video.url : ""} />
+                <Meta name="video:type" content="video/mp4" />
+                <Meta name="video:secure_url" content={video ? "https://yt-api.sigve.dev/uploads/" + video.url : ""} />
+                <Meta name="video:height" content="720" />
+                <Meta name="video:width" content="1280" />
+                <Meta name="image:height" content="720" />
+                <Meta name="image:width" content="1280" />
                 <Header user={user} />
                 <div className="video-content">
                     <div className="video-container">
