@@ -27,7 +27,7 @@ const Video = ({ user }) => {
                     </div>
                     <div className="video-info">
                         <h1 className="title">{video ? video.title : "Loading..."}</h1>
-                        <h2 className="title">Uploaded by: <span>{video ? video.ownerName : "Loading..."}</span></h2>
+                        <h2 className="title">Uploaded by: <a href={"/profile/" + video.ownerId}>{video ? video.ownerName : "Loading..."}</a></h2>
                         <h2 className="title">Uploaded at: <span>{video ? new Date(video.createdAt).toDateString() : "Loading..."}</span></h2>
                         <h2 className="title">Description: <span>{video ? video.description : "Loading..."}</span></h2>
                     </div>
