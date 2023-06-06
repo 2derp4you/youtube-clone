@@ -22,8 +22,11 @@ const Video = ({ user }) => {
         <HeadProvider>
             <div className="video-page">
                 <Title>test</Title>
+                <Meta property="og:url" content="https://yt.sigve.dev" />
+                <Meta property="og:site_name" content="Youtube HC" />
                 <Meta property="og:title" content="test" />
                 <Meta property="og:description" content="test" />
+
                 <Header user={user} />
                 <div className="video-content">
                     <div className="video-container">
