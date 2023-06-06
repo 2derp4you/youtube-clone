@@ -26,7 +26,8 @@ const Video = ({ user }) => {
                 <Meta property="og:site_name" content="Youtube HC" />
                 <Meta property="og:title" content="test" />
                 <Meta property="og:description" content="test" />
-
+                <Meta property="og:type" content="video.other" />
+                <Meta property="og:image" content="https://yt-api.sigve.dev/uploads/1685986007373-594928337-capybara.jpg" />
                 <Header user={user} />
                 <div className="video-content">
                     <div className="video-container">
