@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HeadProvider, Title, Meta } from 'react-head';
-import Discord from 'discord.js';
 
 import Header from "../components/header";
 import ReactPlayer from "react-player";
@@ -19,18 +18,13 @@ const Video = ({ user }) => {
         getVideo();
     }, []);
 
-    const embed = new Discord.MessageEmbed()
-        .setTitle(video ? video.title : "Loading...")
-        .setURL("https://yt.sigve.dev/video/" + id)
-        .setVideo("https://yt-api.sigve.dev/uploads/" + video ? video.url : "Loading...")
-    
-    message.channel.send(embed);
-
     return (
         <HeadProvider>
             <div className="video-page">
                 <Title>test</Title>
-
+                <Meta name="description" content="test" />
+                <Meta property="og:title" content="test" />
+                <Meta property="og:description" content="test" />
                 <Header user={user} />
                 <div className="video-content">
                     <div className="video-container">
