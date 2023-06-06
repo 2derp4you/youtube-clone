@@ -22,10 +22,8 @@ const Video = ({ user }) => {
         <HeadProvider>
             <div className="video-page">
                 <Title>test</Title>
-                <head>
-                    <meta property="og:title" content={video ? video.title : "Loading..."} />
-                    <meta property="og:description" content={video ? video.description : "Loading..."} />
-                </head>
+                <Meta property="og:title" content="test" />
+                <Meta property="og:description" content="test" />
                 <Header user={user} />
                 <div className="video-content">
                     <div className="video-container">
