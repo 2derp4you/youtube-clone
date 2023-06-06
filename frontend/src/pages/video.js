@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { HeadProvider, Title, Meta } from 'react-head';
-import Discord from 'discordjs';
+import Discord from "discord.js";
 
 import Header from "../components/header";
 import ReactPlayer from "react-player";
