@@ -23,7 +23,7 @@ const Video = ({ user }) => {
             <div className="video-page">
                 <Title>{video ? video.title : "Loading..."}</Title>
                 <Meta property="og:site_name" content="Youtube HC" />
-                <Meta property="og:url" content={url} />
+                <Meta property="og:url" content={window.location.href} />
                 <Meta property="og:type" content="video.other" />
                 <Meta property="og:title" content={video ? video.title : ""} />
                 <Meta property="og:image" content={video ? "https://yt-api.sigve.dev/uploads/" + video.thumbnail : ""} />
