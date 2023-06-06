@@ -21,19 +21,20 @@ const Video = ({ user }) => {
     return (
         <HeadProvider>
             <div className="video-page">
-                <Title>{video ? video.title : "Loading..."}</Title>
+                <Title>test</Title>
                 <Meta property="og:site_name" content="Youtube HC" />
-                <Meta property="og:url" content={window.location.href} />
+                <Meta property="og:url" content={"https://yt.sigve.dev/video/647e60ebc21877bc6a9fae13"} />
                 <Meta property="og:type" content="video.other" />
-                <Meta property="og:title" content={video ? video.title : ""} />
-                <Meta property="og:image" content={video ? "https://yt-api.sigve.dev/uploads/" + video.thumbnail : ""} />
-                <Meta property="og:video" content={video ? "https://yt-api.sigve.dev/uploads/" + video.url : ""} />
+                <Meta property="og:title" content={"monke"} />
+                <Meta property="og:image" content={"https://yt-api.sigve.dev/uploads/1686003946316-347596002-hqdefault.jpg"} />
+                <Meta property="og:video" content={"https://yt-api.sigve.dev/uploads/1686003947442-573307690-yt5s.com-Life could be dream monke(720p).mp4"} />
                 <Meta property="og:video:type" content="video/mp4" />
-                <Meta property="og:video:secure_url" content={video ? "https://yt-api.sigve.dev/uploads/" + video.url : ""} />
+                <Meta property="og:video:secure_url" content={"https://yt-api.sigve.dev/uploads/1686003947442-573307690-yt5s.com-Life could be dream monke(720p).mp4"} />
                 <Meta property="og:video:height" content="720" />
                 <Meta property="og:video:width" content="1280" />
                 <Meta property="og:image:height" content="720" />
                 <Meta property="og:image:width" content="1280" />
+
                 <Header user={user} />
                 <div className="video-content">
                     <div className="video-container">
