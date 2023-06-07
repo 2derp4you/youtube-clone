@@ -16,12 +16,11 @@
       let url = window.location.href;
       if (url.includes('video')) {
         let videoId = url.split('/video/')[1];
-        document.querySelector('meta[property="og:video"]').content = `https://yt-api.sigve.dev/uploads/${videoId}.mp4`;
-      } else {
-        document.querySelector('meta[property="og:video"]').content = `https://yt-api.sigve.dev/uploads/`;
+        var link = document.createElement('meta');
+        link.setAttribute('property', 'og:video');
+        link.content = `https://yt-api.sigve.dev/uploads/${videoId}`;
       }
     </script>
-    <meta property="og:video" content="https://yt-api.sigve.dev/uploads/" />
     <meta property="og:video:type" content="video/mp4">
     <meta property="og:url" content="https://yt.sigve.dev/" />
     <meta property="og:video:height" content="720">
