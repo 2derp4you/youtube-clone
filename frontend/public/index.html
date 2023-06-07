@@ -12,7 +12,7 @@
     <meta property="og:title" content="Youtube HC" />
     <meta property="og:description" content="Youtube clone for HC" />
     <meta property="og:type" content="video.other" />
-    <script defer>
+    <script type="module">
       let url = window.location.href;
       if (url.includes('video')) {
         let videoId = url.split('/video/')[1];
@@ -37,7 +37,6 @@
         document.getElementsByTagName('head')[0].appendChild(link);
       }
     </script>
-    <meta property="og:video:type" content="video/mp4">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
