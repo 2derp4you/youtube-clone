@@ -12,16 +12,6 @@
     <meta property="og:title" content="Youtube HC" />
     <meta property="og:description" content="Youtube clone for HC" />
     <meta property="og:type" content="video.other" />
-    <script defer>
-      let url = window.location.href;
-      if (url.includes('video')) {
-        let videoId = url.split('/video/')[1];
-        var link = document.createElement('meta');
-        link.setAttribute('property', 'og:video');
-        link.content = `https://yt-api.sigve.dev/uploads/${videoId}.mp4`;
-        document.getElementsByTagName('head')[0].appendChild(link);
-      }
-    </script>
     <meta property="og:video:type" content="video/mp4">
     <meta property="og:url" content="https://yt.sigve.dev/" />
     <meta property="og:video:height" content="720">
@@ -31,6 +21,18 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </head>
   <body>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let url = window.location.href;
+        if (url.includes('video')) {
+          let videoId = url.split('/video/')[1];
+          var link = document.createElement('meta');
+          link.setAttribute('property', 'og:video');
+          link.content = `https://yt-api.sigve.dev/uploads/${videoId}.mp4`;
+          document.getElementsByTagName('head')[0].appendChild(link);
+        }
+      });
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
