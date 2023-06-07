@@ -46,7 +46,7 @@ const Upload = ({user}) => {
 
         try {
             await axios.post("https://yt-api.sigve.dev/video/upload", newVideo);
-            window.location.replace("https://yt.sigve.dev/profile");
+            window.location.replace("https://yt.sigve.dev");
         }
         catch (err) {
             console.log(err);
