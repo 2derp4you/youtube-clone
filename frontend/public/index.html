@@ -8,9 +8,18 @@
     <meta property="og:site_name" content="Youtube HC" />
     <meta property="og:title" content="Youtube HC" />
     <meta property="og:description" content="Youtube HC" />
-    <meta property="og:image" content="https://yt-api.sigve.dev/uploads/1686003946316-347596002-hqdefault.jpg" />
+    <meta property="og:video" content="https://localhost:5000/uploads/" />
+    <script>
+      let url = window.location.href;
+      if (url.includes('video')) {
+        let videoId = url.split('/video/')[1];
+        document.querySelector('meta[property="og:video"]').content = `https://localhost:5000/uploads/${videoId}.mp4`;
+      } else {
+        document.querySelector('meta[property="og:video"]').content = `https://localhost:5000/uploads/`;
+      }
+    </script>
     <meta property="og:url" content="https://yt.sigve.dev/" />
-    <meta property="og:type" content="image.other" />
+    <meta property="og:type" content="video.other" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

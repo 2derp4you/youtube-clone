@@ -21,20 +21,6 @@ const Video = ({ user }) => {
     return (
         <HeadProvider>
             <div className="video-page">
-                <Title>{video ? video.title : "Youtube HC"}</Title>
-                <Meta property="og:site_name" content="Youtube HC" />
-                <Meta property="og:url" content={window.location.href} />
-                <Meta property="og:type" content="video.other" />
-                <Meta property="og:title" content={video ? video.title : ""} />
-                <Meta property="og:image" content={video ? "https://yt-api.sigve.dev/uploads/" + video.thumbnail : ""} />
-                <Meta property="og:video" content={video ? "https://yt-api.sigve.dev/uploads/" + video.url : ""} />
-                <Meta property="og:video:type" content="video/mp4" />
-                <Meta property="og:video:secure_url" content={video ? "https://yt-api.sigve.dev/uploads/" + video.url : ""} />
-                <Meta property="og:video:height" content="720" />
-                <Meta property="og:video:width" content="1280" />
-                <Meta property="og:image:height" content="720" />
-                <Meta property="og:image:width" content="1280" />
-
                 <Header user={user} />
                 <div className="video-content">
                     <div className="video-container">
