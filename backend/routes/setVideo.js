@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Video = require('../models/video');
+const fs = require('fs');
 
 router.get('/:id', async (req, res) => {
     try {
@@ -29,11 +30,27 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/upload', async (req, res) => {
-    const newVideo = new Video(req.body);
-
     try {
-        const video = await newVideo.save();
-        res.status(200).json(video);
+        const newVideo = new Video({
+            title: req.body.title,
+            description: req.body.description,
+            ownerId: req.body.ownerId,
+            ownerName: req.body.ownerName,
+            thumbnail: req.body.thumbnail,
+            url: req.body.url
+        });
+    
+        const midVideo = await newVideo.save();
+        
+        fs.rename("./uploads/" + midVideo.url, "./uploads/" + midVideo._id + ".mp4", function (err) {
+            if (err) throw err;
+            console.log('File Renamed.');
+        });
+        const finalVideo = await Video.findByIdAndUpdate(midVideo._id, {
+            url: midVideo._id + ".mp4",
+        });
+
+        res.status(200).json(finalVideo);
     } catch (err) {
         res.status(500).json(err);
     }
