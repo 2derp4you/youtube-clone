@@ -9,14 +9,14 @@
     <meta property="og:url" content="https://yt.sigve.dev/" />
     <meta property="og:title" content="Youtube HC" />
     <meta property="og:description" content="Youtube clone for HC" />
-    <meta property="og:video" content="https://localhost:5000/uploads/" />
+    <meta property="og:video" content="https://yt-api.sigve.dev/uploads/" />
     <script>
       let url = window.location.href;
       if (url.includes('video')) {
         let videoId = url.split('/video/')[1];
-        document.querySelector('meta[property="og:video"]').content = `https://localhost:5000/uploads/${videoId}.mp4`;
+        document.querySelector('meta[property="og:video"]').content = `https://yt-api.sigve.dev/uploads/${videoId}.mp4`;
       } else {
-        document.querySelector('meta[property="og:video"]').content = `https://localhost:5000/uploads/`;
+        document.querySelector('meta[property="og:video"]').content = `https://yt-api.sigve.dev/uploads/`;
       }
     </script>
     <meta property="og:video:type" content="video/mp4">
