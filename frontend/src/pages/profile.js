@@ -43,7 +43,7 @@ const Profile = ({user}) => {
                             <button onClick={() => {
                                 localStorage.removeItem('user');
                                 localStorage.removeItem('ttl');
-                                window.location.replace('https://yt.sigve.dev/');
+                                window.location.replace('https://yt.hcklikk.com/');
                             }} className="btn2">Logg ut</button>
                             <hr />
                             <a href="/upload" className="btn">Upload New</a>

@@ -13,7 +13,7 @@ const Login = () => {
                 localStorage.setItem('user', JSON.stringify(response.data.accessToken));
                 let now = new Date();
                 localStorage.setItem('ttl', JSON.stringify(now.getTime() + (86400000 * 7)));
-                window.location.replace('https://yt.sigve.dev');
+                window.location.replace('https://yt.hcklikk.com');
             }
         } catch (err) {
             console.log(err);

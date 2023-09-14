@@ -46,7 +46,7 @@ const Upload = ({user}) => {
 
         try {
             await axios.post("https://yt-api.hcklikk.com/video/upload", newVideo);
-            window.location.replace("https://yt.sigve.dev");
+            window.location.replace("https://yt.hcklikk.com");
         }
         catch (err) {
             console.log(err);
@@ -73,8 +73,7 @@ const Upload = ({user}) => {
                         <input type="text" id="title" placeholder="title" />
                         <input type="text" id="description" placeholder="description" />
                         <input type="file" id="image" onChange={handleImgFileChange} accept="image/png, image/jpg, image/jpeg" />
-                        <input type="file" id="video" onChange={handleFileChange} accept="video/mp4" maxsize="800000000" />
-                        <p>100mb upload limit!</p>
+                        <input type="file" id="video" onChange={handleFileChange} accept="video/mp4" />
                         <input type="submit" className="btn" value="Upload" />
                     </form>
                 </div>
