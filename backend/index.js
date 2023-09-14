@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGO_URL, {
 //setter opp for bruk av cors og hvilet domene som kan bruke serveren
 app.use(
     cors({
-        origin: "https://yt.sigve dev",
+        origin: "https://yt.sigve.dev",
         methods: "GET,POST,PUT,DELETE",
         credentials: true
     })
@@ -80,6 +80,6 @@ app.use("/user", userRoute);
 app.use("/video", videoRoute);
 
 //starter serveren
-app.listen("25582", ()=>{
-    console.log("Server is running on port 25582!");
+app.listen("5000", ()=>{
+    console.log("Server is running on port 5000!");
 })

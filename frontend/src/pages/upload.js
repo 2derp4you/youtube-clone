@@ -29,7 +29,7 @@ const Upload = ({user}) => {
         const data = new FormData();
         data.append("image", imgFile);
         const resImg = await axios.post(
-            "https://yt-api.sigve.dev/upload/image",
+            "https://yt-api.hcklikk.com/upload/image",
             data
         );
         console.log(resImg.data.file);
@@ -38,14 +38,14 @@ const Upload = ({user}) => {
         const data2 = new FormData();
         data2.append("video", file);
         const resVideo = await axios.post(
-            "https://yt-api.sigve.dev/upload/video",
+            "https://yt-api.hcklikk.com/upload/video",
             data2
         );
         console.log(resVideo.data.file);
         newVideo.url = resVideo.data.file;
 
         try {
-            await axios.post("https://yt-api.sigve.dev/video/upload", newVideo);
+            await axios.post("https://yt-api.hcklikk.com/video/upload", newVideo);
             window.location.replace("https://yt.sigve.dev");
         }
         catch (err) {

@@ -12,7 +12,7 @@ const Profile = ({user}) => {
     useEffect(() => {
         const getVideos = async () => {
             try {
-                const response = await axios.get('https://yt-api.sigve.dev/video/owner/' + id);
+                const response = await axios.get('https://yt-api.hcklikk.com/video/owner/' + id);
                 setVideos(response.data);
             } catch (error) {
                 console.log(error);
@@ -54,7 +54,7 @@ const Profile = ({user}) => {
                         {videos ? videos.slice(0).reverse().map(video => {
                             return (
                                 <a href={"/video/" + video._id} className="video">
-                                    <img src={"https://yt-api.sigve.dev/uploads/" + video.thumbnail} alt="video" width="100%" height="80%" />
+                                    <img src={"https://yt-api.hcklikk.com/uploads/" + video.thumbnail} alt="video" width="100%" height="80%" />
                                     <h3 className="title">{video.title}</h3>
                                 </a>
                             )

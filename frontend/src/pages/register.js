@@ -10,7 +10,7 @@ const Register = () => {
             return;
         }
 
-        const response = await axios.post('https://yt-api.sigve.dev/user/register', {
+        const response = await axios.post('https://yt-api.hcklikk.com/user/register', {
             username: document.getElementById('username').value,
             email: document.getElementById('email').value,
             password: document.getElementById('pass').value,

@@ -12,7 +12,7 @@ const Video = ({ user }) => {
 
     useEffect(() => {
         const getVideo = async () => {
-            const response = await axios.get('https://yt-api.sigve.dev/video/' + id);
+            const response = await axios.get('https://yt-api.hcklikk.com/video/' + id);
             setVideo(response.data);
         };
         getVideo();
@@ -25,7 +25,7 @@ const Video = ({ user }) => {
                 <div className="video-content">
                     <div className="video-container">
                         <div className="video">
-                            {video ? <ReactPlayer url={"https://yt-api.sigve.dev/uploads/" + video.url} controls={true} width="100%" height="100%" /> : "Loading..."}
+                            {video ? <ReactPlayer url={"https://yt-api.hcklikk.com/uploads/" + video.url} controls={true} width="100%" height="100%" /> : "Loading..."}
                         </div>
                         {video ?
                         <div className="video-info">
