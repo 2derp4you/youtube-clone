@@ -13,10 +13,6 @@ import Upload from './pages/upload';
 function App() {
   const [user, setUser] = useState(null);
 
-  app.use(
-    require("prerender-node").set("prerenderToken", ["OX77lkOzOZaLc6ZXpmFn"])
-  );
-
   useEffect(() => {
     const checkUser = async () => {
       const response = await axios.get('https://yt-api.hcklikk.com/auth', {
