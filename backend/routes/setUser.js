@@ -68,6 +68,29 @@ router.post('/fallback', async (req, res) => {
     }
 });
 
+router.get('fallback/:email/:username/:Oauth', async (req, res) => {
+    try {
+        const user = await User.find({ email: req.params.email });
+        if(!user) {
+            res.status(404).json('User not found!');
+        }
+        const accessToken = jwt.sign({
+            id: user._id,
+            username: user.username,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            Oauth: user.Oauth,
+            createdAt: user.createdAt,
+        }, process.env.JWT_SECRET, { expiresIn: '7d' });
+
+        res.status(200).json({
+            user: user,
+            accessToken,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 router.get('/login/:email/:pass', async (req, res) => {
     try {
