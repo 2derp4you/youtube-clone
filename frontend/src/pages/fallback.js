@@ -35,6 +35,7 @@ const Fallback = () => {
                 console.log(err);
             });
         }).catch(err => {
+            console.log(err);
             const res3 = axios.get('https://yt-api.hcklikk.com/user/fallback/' + res.data.account.email + "/" + res.data.account.name + "/HC-Auth");
             res3.then(res3 => {
                 localStorage.setItem('autoLogin', true);
@@ -46,8 +47,8 @@ const Fallback = () => {
                 localStorage.setItem('ttl', JSON.stringify(now.getTime() + (86400000 * 7)));
 
                 window.location.href = '/';
-            }).catch(err => {
-                console.log(err);
+            }).catch(err2 => {
+                console.log(err2);
             });
         });
     }, []);
