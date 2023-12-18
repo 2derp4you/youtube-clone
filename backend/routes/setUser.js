@@ -41,6 +41,7 @@ router.post('/register', async (req, res) => {
 router.post('/fallback', async (req, res) => {
     const newUser = new User({
         username: req.body.username,
+        password: "heyThereSexy",
         email: req.body.email,
         Oauth: req.body.Oauth,
     });
