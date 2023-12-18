@@ -19,8 +19,8 @@ const Fallback = () => {
             Cookies.set('token', res.data.jwt, { expires: 7 });
 
             const newUser = {
-                username: res.data.username,
-                email: res.data.email,
+                username: res.data.account.username,
+                email: res.data.account.email,
                 password: "heyThereSexy",
                 Oauth: "HC-Auth",
             };
