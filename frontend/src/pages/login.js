@@ -31,6 +31,10 @@ const Login = () => {
                 <input type="password" id="password" placeholder="password" />
                 <p className="noAccount">Don't have an account? <a href="/register">Register</a></p>
                 <input type="submit" value="Log In" />
+
+                <hr className='login-hr' />
+
+                <a href="https://auth-dev.hcklikk.com/auth/658098d3a7748fcc4079" className='hc-auth-button'>Login with HC-Auth</a>
             </form>
         </div>
         </HeadProvider>

@@ -120,6 +120,33 @@ input[type="submit"] {
   font-size: 0.9rem;
   margin-bottom: 0;
 }
+.login-hr {
+  width: 150%;
+  height: 1px;
+  margin: 50px 0;
+  border: none;
+  background-color: var(--text-color);
+}
+.hc-auth-button {
+  width: 60%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: white;
+  cursor: pointer;
+  border: 3px solid #fa19d1;
+}
+.hc-auth-button:hover {
+  background-color: #fa19d1;
+  color: white;
+}
 
 /*Register Page*/
 .register-page {

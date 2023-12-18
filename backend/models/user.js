@@ -19,6 +19,10 @@ const userSchema = new Schema({
         type: Boolean,
         default: false,
     },
+    Oauth: {
+        type: String,
+        default: null,
+    },
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);

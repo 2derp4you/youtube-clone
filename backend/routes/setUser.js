@@ -15,6 +15,7 @@ router.post('/register', async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: hashedPassword,
+        Oauth: null,
     });
 
     try {
@@ -37,11 +38,42 @@ router.post('/register', async (req, res) => {
     }
 });
 
+router.post('/fallback', async (req, res) => {
+    const newUser = new User({
+        username: req.body.username,
+        email: req.body.email,
+        Oauth: req.body.Oauth,
+    });
+
+    try {
+        const user = await newUser.save();
+
+        const accessToken = jwt.sign({
+            id: user._id,
+            username: user.username,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            createdAt: user.createdAt,
+        }, process.env.JWT_SECRET, { expiresIn: '7d' });
+
+        res.status(200).json({
+            user: user,
+            accessToken,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+
 router.get('/login/:email/:pass', async (req, res) => {
     try {
         let user = await User.find({ email: req.params.email });
         if(!user) {
             res.status(404).json('User not found!');
+        }
+        if(user[0].Oauth !== null) {
+            res.status(400).json('Please login with HC-Auth!');
         }
         bcrypt.compare(req.params.pass, user[0].password, (err, result) => {
             if(err) {
