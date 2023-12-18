@@ -19,6 +19,7 @@ const Fallback = () => {
                 email: res.data.account.email,
                 Oauth: "HC-Auth",
             };
+            console.log(newUser);
 
             const res2 = axios.post('https://yt-api.hcklikk.com/user/fallback', newUser);
             res2.then(res2 => {

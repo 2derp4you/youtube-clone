@@ -26,6 +26,7 @@ router.post('/register', async (req, res) => {
             username: user.username,
             email: user.email,
             isAdmin: user.isAdmin,
+            Oauth: user.Oauth,
             createdAt: user.createdAt,
         }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
@@ -49,17 +50,8 @@ router.post('/fallback', async (req, res) => {
     try {
         const user = await newUser.save();
 
-        const accessToken = jwt.sign({
-            id: user._id,
-            username: user.username,
-            email: user.email,
-            isAdmin: user.isAdmin,
-            createdAt: user.createdAt,
-        }, process.env.JWT_SECRET, { expiresIn: '7d' });
-
         res.status(200).json({
             user: user,
-            accessToken,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -88,6 +80,7 @@ router.get('/login/:email/:pass', async (req, res) => {
                         username: user[0].username,
                         email: user[0].email,
                         isAdmin: user[0].isAdmin,
+                        Oauth: user[0].Oauth,
                         createdAt: user[0].createdAt,
                     }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
