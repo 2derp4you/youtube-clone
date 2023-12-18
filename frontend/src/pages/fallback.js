@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const Fallback = () => {
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const { pathname } = window.location;
@@ -38,14 +39,15 @@ const Fallback = () => {
                     localStorage.setItem('autoLogin', true);
                     // Set the cookie to expire in 2 days
                     Cookies.set('token', res.data.jwt, { expires: 7 });
-                
+
                     localStorage.setItem('user', JSON.stringify(res3.data.accessToken));
                     let now = new Date();
                     localStorage.setItem('ttl', JSON.stringify(now.getTime() + (86400000 * 7)));
-                
+
                     window.location.href = '/';
                 }).catch(err2 => {
                     console.log(err2);
+                    setError("User with this Email already exists");
                 });
             });
         }).catch(err => {
@@ -56,6 +58,7 @@ const Fallback = () => {
     return (
         <div>
             <h1>Redirecting...</h1>
+            {error ? <p>{error}</p> : <></>}
         </div>
     )
 };
