@@ -38,20 +38,17 @@ function App() {
       }
     }
     if (token) {
-      if (!user) {
-        const getUser = async () => {
-          const res = await axios.get('https://auth-api.hcklikk.com/auth', {
-            headers: {
-              jwt_token: token
-            }
-          });
-          if (res.data.jwt) {
-            Cookies.set('token', res.data.jwt, { expires: 7 });
+      const getUser = async () => {
+        const res = await axios.get('https://auth-api.hcklikk.com/auth', {
+          headers: {
+            jwt_token: token
           }
-          setUser(res.data);
+        });
+        if (res.data.jwt) {
+          Cookies.set('token', res.data.jwt, { expires: 7 });
         }
-        getUser();
       }
+      getUser();
     } else {
       if (window.location.pathname.startsWith('/fallback')) {
         return;

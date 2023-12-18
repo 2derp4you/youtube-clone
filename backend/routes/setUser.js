@@ -50,8 +50,18 @@ router.post('/fallback', async (req, res) => {
     try {
         const user = await newUser.save();
 
+        const accessToken = jwt.sign({
+            id: user._id,
+            username: user.username,
+            email: user.email,
+            isAdmin: user.isAdmin,
+            Oauth: user.Oauth,
+            createdAt: user.createdAt,
+        }, process.env.JWT_SECRET, { expiresIn: '7d' });
+
         res.status(200).json({
             user: user,
+            accessToken,
         });
     } catch (err) {
         res.status(500).json(err);
