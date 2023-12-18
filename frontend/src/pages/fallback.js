@@ -33,23 +33,23 @@ const Fallback = () => {
                 window.location.href = '/';
             }).catch(err => {
                 console.log(err);
+                const res3 = axios.get('https://yt-api.hcklikk.com/user/fallback/' + res.data.account.email + "/" + res.data.account.name + "/HC-Auth");
+                res3.then(res3 => {
+                    localStorage.setItem('autoLogin', true);
+                    // Set the cookie to expire in 2 days
+                    Cookies.set('token', res.data.jwt, { expires: 7 });
+                
+                    localStorage.setItem('user', JSON.stringify(res3.data.accessToken));
+                    let now = new Date();
+                    localStorage.setItem('ttl', JSON.stringify(now.getTime() + (86400000 * 7)));
+                
+                    window.location.href = '/';
+                }).catch(err2 => {
+                    console.log(err2);
+                });
             });
         }).catch(err => {
             console.log(err);
-            const res3 = axios.get('https://yt-api.hcklikk.com/user/fallback/' + res.data.account.email + "/" + res.data.account.name + "/HC-Auth");
-            res3.then(res3 => {
-                localStorage.setItem('autoLogin', true);
-                // Set the cookie to expire in 2 days
-                Cookies.set('token', res.data.jwt, { expires: 7 });
-
-                localStorage.setItem('user', JSON.stringify(res3.data.accessToken));
-                let now = new Date();
-                localStorage.setItem('ttl', JSON.stringify(now.getTime() + (86400000 * 7)));
-
-                window.location.href = '/';
-            }).catch(err2 => {
-                console.log(err2);
-            });
         });
     }, []);
 
