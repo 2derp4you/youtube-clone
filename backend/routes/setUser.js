@@ -68,7 +68,7 @@ router.post('/fallback', async (req, res) => {
     }
 });
 
-router.get('fallback/:email/:username/:Oauth', async (req, res) => {
+router.get('/fallback/:email/:username/:Oauth', async (req, res) => {
     try {
         const user = await User.find({ email: req.params.email, username: req.params.username, Oauth: req.params.Oauth });
         if(!user) {
