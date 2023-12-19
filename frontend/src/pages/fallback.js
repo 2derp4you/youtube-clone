@@ -21,7 +21,7 @@ const Fallback = () => {
                 Oauth: "HC-Auth",
             };
 
-            const res2 = axios.post('https://yt-api.hcklikk.com/user/fallback', newUser);
+            const res2 = axios.post('https://yt-api.hcklikk.com/user/fallback', newUser, { withCredentials: true });
             res2.then(res2 => {
                 localStorage.setItem('autoLogin', true);
                 // Set the cookie to expire in 2 days
@@ -34,7 +34,7 @@ const Fallback = () => {
                 window.location.href = '/';
             }).catch(err => {
                 console.log(err);
-                const res3 = axios.get('https://yt-api.hcklikk.com/user/fallback/' + res.data.account.email + "/" + res.data.account.name + "/HC-Auth");
+                const res3 = axios.get('https://yt-api.hcklikk.com/user/fallback/' + res.data.account.email + "/" + res.data.account.name + "/HC-Auth", { withCredentials: true });
                 res3.then(res3 => {
                     localStorage.setItem('autoLogin', true);
                     // Set the cookie to expire in 2 days
