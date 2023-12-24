@@ -15,6 +15,7 @@ import Fallback from './pages/fallback';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [OauthConfig, setOauthConfig] = useState(null);
   const appId = '658098d3a7748fcc4079';
   const token = Cookies.get('token');
 
@@ -46,6 +47,9 @@ function App() {
         });
         if (res.data.jwt) {
           Cookies.set('token', res.data.jwt, { expires: 7 });
+        }
+        if (res.data.config.pfp !== null) {
+          localStorage.setItem('pfp', res.data.config.pfp);
         }
       }
       getUser();
